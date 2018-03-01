@@ -155,5 +155,26 @@ The output HTML that would be generated would be:
       <span>Another text node</span>
     </p>
   </div>
-</main>```
+</main>
+```
+
+## Notes about performance
+
+Rendering a whole page with json may or may not be a good idea. 
+For performance,
+
+1. Server side rendering should be preferred.
+2. The JSON should be cached from the API (on the server). How much to cache would depend on the scenario being used.
+
+But, all in all,  this is optimal if user wants to render a specific portion of a page dynamically, because we are just creating JSX tags. 
+
+## Notes about implementation
+
+If we are supposed to make this feasible, instead of creating the JSON by hand as I did now, there should be a CMS which can :
+
+1. Allow user to create layouts ( happy scenario being , allows user to drag and drop elements )
+2. Convert the information about the layout into an API that would provide a JSON like above, or atleast provide the info to an API layer that might do so.
+
+
+
 

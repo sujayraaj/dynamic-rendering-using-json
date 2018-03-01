@@ -17,9 +17,11 @@ function h(elementName, props, children)
 ```
 
 In case of react, this function is ```React.createElement```. During the transformation from JSX to JS, babel picks up the JSX, identifies the component name from the first string after '<', example 
-```<ComponentParent prop1={'prop1'}>
+```
+<ComponentParent prop1={'prop1'}>
   <ComponentChild propa={'propa'}/>
-</ComponentParent>```
+</ComponentParent>
+```
 
 the component name is 'ComponentParent'. Then it transforms the JSX into call to React.createElemet.
 

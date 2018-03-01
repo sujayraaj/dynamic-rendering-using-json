@@ -10,7 +10,7 @@ This project was bootstrapped with create-react-app
 
 ## Description
 
-The trick to figure out dynamic rendering is knowing a fact that any JSX element created by React, preact or other similar libraries is basically a call to a function ```h()```,  whose closest declaration would be:
+The trick to figure out dynamic rendering is knowing a fact that any JSX element created by React, Preact or other similar libraries is basically a call to a function ```h()```,  whose closest declaration would be:
 
 ```
 function h(elementName, props, children)
@@ -27,11 +27,13 @@ the component name is 'ComponentParent'. Then it transforms the JSX into call to
 
 There is recursive parsing for each children, and then their children, while converting all JSX to calls of React.createElement.
 
-This is how many libraries claim to be 'compatible' with react. As they just alias the React.createElement function with a corrosponding createElement function of their own.
+This is how many libraries claim to be 'compatible' with react. As they just alias the their own such function with React.createElement. 
 
-Now, which element gets rendered from the component's name is decided by a Map string => class or string => string.
+Example, the library 'Inferno' , https://github.com/infernojs/inferno, creates monomorphic createVNode calls, instead of createElement.
+
+Now, which element gets rendered from the component's name is decided by a Map string => class/function or string => string.
 The component names that are strings are usually the dom elements, example 'div'.
-The component names that are classes, are custom elements created by that particular library.
+The component names that are class/function, are custom elements created by that particular library.
 
 So, for a javascript object ( converted from json ):
 
